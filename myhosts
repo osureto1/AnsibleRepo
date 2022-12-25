@@ -24,6 +24,3 @@
 172.31.38.229
 
 
-[myWebServers:vars]
-webpackonubuntu= nginx
-webpackonredhat= httpd

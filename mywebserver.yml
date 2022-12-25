@@ -4,24 +4,24 @@
    tasks:
    - name: install webserver on ansible nodes
      apt:
-        name: "{{webpackonubuntu}}"
+        name: nginx
         state: latest
      when: ansible_os_family =="Debian"
 
    - name: start nginx webserver
      service: 
-         name: "{{webpackonubuntu}}"
+         name: nginx
          state: started
      when: ansible_os_family =="Debian"
 
    - name: install webserver on ansible nodes
      yum:
-        name: "{{webpackonredhat}}"
+        name: httpd
         state: present
      when: ansible_os_family =="RedHat"
 
    - name: start webserver on ansible nodes
      service: 
-         name: "{{webpackonredhat}}"
+         name: httpd
          state: started
      when: ansible_os_family =="RedHat"
