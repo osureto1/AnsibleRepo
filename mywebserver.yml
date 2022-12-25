@@ -5,10 +5,10 @@
    - name: install webserver on ansible nodes
      apt:
         name: "{{webpackonubuntu}}"
-        state: latest
+        state: absent
      when: ansible_os_family =="Debian"
 
-   - name: start nginx webserver
+   - name: stop apache2 webserver
      service: 
          name: "{{webpackonubuntu}}"
          state: started
