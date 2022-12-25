@@ -5,7 +5,7 @@
    - name: install webserver on ansible nodes
      apt:
         name: "{{webpackonubuntu}}"
-        state: absent
+        state: latest
      when: ansible_os_family =="Debian"
 
    - name: stop apache2 webserver
