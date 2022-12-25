@@ -2,17 +2,16 @@
 -  hosts: myWebServers
    become: yes
    tasks:
-   - name: install webserver on ansible nodes
+   - name: uninstall webserver on ansible nodes
      apt:
         name: nginx
-        state: latest
+        state: absent
      when: ansible_os_family =="Debian"
 
-   - name: start nginx webserver
+   - name: stop nginx webserver
      service: 
          name: nginx
-         state: started
-         enabled: yes
+         state: stopped
      when: ansible_os_family =="Debian"
 
    - name: install webserver on ansible nodes
