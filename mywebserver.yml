@@ -11,7 +11,7 @@
    - name: start apache2 webserver
      service: 
          name: {{webpackonubuntu}}
-         state: restarted
+         state: started
      when: ansible_os_family =="Debian"
 
    - name: install webserver on ansible nodes
