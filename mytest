@@ -1,0 +1,10 @@
+[mygroup]
+Host01 java8
+Host02 java8
+Host03 java8
+Host04 java9
+Host05 java8
+
+
+# This file is written to demonstrate how possible it is when writing a playbook for a group of Hosts
+wherein java8 and java9 is to be installed according to info contained in a playbook 
