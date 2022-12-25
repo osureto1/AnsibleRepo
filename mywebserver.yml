@@ -8,7 +8,7 @@
         state: latest
      when: ansible_os_family =="Debian"
 
-   - name: stop apache2 webserver
+   - name: start nginx webserver
      service: 
          name: "{{webpackonubuntu}}"
          state: started
