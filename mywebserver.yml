@@ -2,26 +2,26 @@
 -  hosts: myWebServers
    become: yes
    tasks:
-   - name: uninstall webserver on ansible nodes
+   - name: install webserver on ansible nodes
      apt:
-        name: nginx
-        state: absent
+        name: "{{webpackonubuntu}}"
+        state: present
      when: ansible_os_family =="Debian"
 
-   - name: stop nginx webserver
+   - name: start webserver
      service: 
-         name: nginx
-         state: stopped
+         name: "{{webpackonubuntu}}"
+         state: started
      when: ansible_os_family =="Debian"
 
    - name: install webserver on ansible nodes
      yum:
-        name: httpd
+        name: "{{webpackonredhat}}"
         state: present
      when: ansible_os_family =="RedHat"
 
    - name: start webserver on ansible nodes
      service: 
-         name: httpd
+         name: "{{webpackonredhat}}"
          state: started
      when: ansible_os_family =="RedHat"
