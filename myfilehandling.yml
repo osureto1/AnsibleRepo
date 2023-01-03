@@ -12,3 +12,5 @@
     copy: 
        src: staticfile.txt
        dest: /home/ubuntu/mystaticfile.txt
+
+  - name: copy index.j2 file into ansible node side
