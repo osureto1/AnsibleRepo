@@ -19,7 +19,7 @@
     template:
         src: myindex.j2
         dest: /var/www/html/index.html
-    notify: restartwebserve
+    notify: restartwebserver
 
   - name: download internet files
     get_url:
